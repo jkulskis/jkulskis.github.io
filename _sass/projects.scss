@@ -13,16 +13,29 @@
     margin: 6px auto !important;
   }
 
-  @media screen and (max-width: $width-limit) {
+  #projectsList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #projectsList p {
+    text-align: center;
+  }
+
+  @media screen and (max-width: 500px) {
+    // looks better on mobile when we take up the whole column for images
     .project-post img, .project-post video {
       width: 95%;
     }
+
   }
 }
 
 #projectsList {
   max-width: 550px;
   margin-top: 0;
+  padding-left: 0;
 }
 
 #projectsList li h1 {

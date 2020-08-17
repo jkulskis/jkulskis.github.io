@@ -6,11 +6,15 @@ title: Experience
 <div class="container center-col">
   <div class="container exp">
     <section class="exp" id="education">
-      <h1>Education</h1>
-      <div class="item-list exp-list">
+      <h1 id="educationHeader" onclick="toggleList($('#educationList'))">
+        Education
+      </h1>
+      <div class="item-list exp-list" id="educationList">
         <div class="item">
           <div class="item-header">
-            <a href="http://www.bu.edu/eng/" target="_blank">Boston University</a>
+            <a href="http://www.bu.edu/eng/" target="_blank"
+              >Boston University</a
+            >
           </div>
           <div class="li-title">
             BS in Computer Engineering, Minor in Computer Science
@@ -20,8 +24,10 @@ title: Experience
       </div>
     </section>
     <section class="exp" id="workExp">
-      <h1>Work Experience</h1>
-      <div class="item-list exp-list">
+      <h1 id="workHeader" onclick="toggleList($('#workList'))">
+        Work Experience
+      </h1>
+      <div class="item-list exp-list" id="workList">
         <div class="item">
           <div class="item-header">
             <a href="https://www.silabs.com/" target="_blank">Silicon Labs</a>
@@ -30,42 +36,57 @@ title: Experience
           <div class="date">May 2020 - August 2020</div>
           <ul>
             <li>
-              Developed infrastructure software in python to locate and quantify the usage of different VMs and hardware
+              Developed infrastructure software in python to locate and quantify
+              the usage of different VMs and hardware
             </li>
-            <li>Improved the display of test results and comparisons across builds using django and javascript</li>
             <li>
-              Helped to integrate software changes for a hardware MUX system with Zigbee JUnit tests, which allowed for
-              multiple testing servers to share the same hardware
+              Improved the display of test results and comparisons across builds
+              using django and javascript
             </li>
-            <li>Created and managed different jenkins jobs with both the jenkins API and UI</li>
+            <li>
+              Helped to integrate software changes for a hardware MUX system
+              with Zigbee JUnit tests, which allowed for multiple testing
+              servers to share the same hardware
+            </li>
+            <li>
+              Created and managed different jenkins jobs with both the jenkins
+              API and UI
+            </li>
           </ul>
         </div>
 
         <div class="item">
           <div class="item-header">
-            <a href="http://sites.bu.edu/nislab/" target="_blank">Boston University NISLAB</a>
+            <a href="http://sites.bu.edu/nislab/" target="_blank"
+              >Boston University NISLAB</a
+            >
           </div>
           <div class="li-title">Software Engineering Research Assistant</div>
           <div class="date">March 2020 - August 2020</div>
           <ul>
             <li>
-              Investigated Cybersecurity advancements for IoT devices with software defined radios (SDRs)
+              Investigated Cybersecurity advancements for IoT devices with
+              software defined radios (SDRs)
             </li>
             <li>
-              Collaborated with PhD students to develop "Snout", an OSS python CLI controlled wrapper tool for other OSS
-              SDR tool sets.
+              Collaborated with PhD students to develop "Snout", an OSS python
+              CLI controlled wrapper tool for other OSS SDR tool sets.
             </li>
             <li>
               <p>
                 This work was accepted into CCS 2019's poster exhibit.&nbsp;
-                <a href="https://snout.tools/" target="_blank">See https://snout.tools/ for more details</a>
+                <a href="https://snout.tools/" target="_blank"
+                  >See https://snout.tools/ for more details</a
+                >
               </p>
             </li>
           </ul>
         </div>
         <div class="item">
           <div class="item-header">
-            <a href="https://www.bu.edu/academics/eng/courses/eng-ec-327/" target="_blank"
+            <a
+              href="https://www.bu.edu/academics/eng/courses/eng-ec-327/"
+              target="_blank"
               >Boston University College of Engineering</a
             >
           </div>
@@ -76,7 +97,8 @@ title: Experience
           <ul>
             <li>Ran labs, held office hours, graded tests and homework</li>
             <li>
-              Implemented GitHub classroom and git tutorials into lesson plans for turning in assignments
+              Implemented GitHub classroom and git tutorials into lesson plans
+              for turning in assignments
             </li>
           </ul>
         </div>
@@ -90,20 +112,24 @@ title: Experience
           <ul>
             <li>Worked on software development for Systems on Chip (SoCs)</li>
             <li>
-              Improved a library in the Zigbee wireless stacks to help prototype devices to customers
+              Improved a library in the Zigbee wireless stacks to help prototype
+              devices to customers
             </li>
             <li>
-              Developed an OTA simulation tool to analyze and help improve packet transmission processes
+              Developed an OTA simulation tool to analyze and help improve
+              packet transmission processes
             </li>
           </ul>
           <div class="li-title">Applications Engineering Intern</div>
           <div class="date">July 2019 - August 2019</div>
           <ul>
             <li>
-              Analyzed the efficiency of various sleep modes and processes for EM3xx and Mighty Gecko SoCs
+              Analyzed the efficiency of various sleep modes and processes for
+              EM3xx and Mighty Gecko SoCs
             </li>
             <li>
-              Provided documentation for Silicon Labs' Zigbee OTA applications and devices
+              Provided documentation for Silicon Labs' Zigbee OTA applications
+              and devices
             </li>
           </ul>
         </div>
@@ -111,3 +137,23 @@ title: Experience
     </section>
   </div>
 </div>
+
+<script>
+  function toggleList(list) {
+    // pushing temporarily, will fix this method on my desktop PC
+    return; 
+    if (list.css("visibility") !== "hidden") {
+      list.slideUp({
+        complete: () => {
+          list.show();
+          list.css("visibility", "hidden");
+        },
+      });
+    }
+    else {
+      list.css("visibility", "");
+      list.hide();
+      list.slideDown();
+    }
+  }
+</script>

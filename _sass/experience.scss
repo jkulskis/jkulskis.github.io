@@ -10,3 +10,7 @@
 .item-list.exp-list .item {
   padding-left: 25px;
 }
+
+.item ul li:nth-child(2n) {
+  color: $primary-color-2;
+}
