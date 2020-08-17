@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Research | John Mikulskis</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@469&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/9cc0d086d3.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  </head>
+  <body>
+    <div class="mobile-nav" onclick="toggleHeader()">
+  <span id="mobileTitle">Title</span>
+  <a href="javascript:void(0);" id="navToggleBtn" class="icon-link" onclick="toggleHeader()">
+    <i id="hamburgerIcon" class="fa fa-bars fa-2x"></i>
+  </a>
+</div>
+
+<div style="clear: both;"></div>
+<nav class="header-nav" id="headerNav">
+  <ul>
+    
+    <li>
+      
+      <a href="/">
+        Home
+      </a>
+      
+    </li>
+    
+    <li>
+      
+      <a href="/experience">
+        Experience
+      </a>
+      
+    </li>
+    
+    <li>
+      
+      <a href="/research" class="current">
+        Research
+      </a>
+      <script>
+        $("#mobileTitle").text("Research");
+      </script>
+      
+    </li>
+    
+    <li>
+      
+      <a href="/projects">
+        Projects
+      </a>
+      
+    </li>
+    
+  </ul>
+</nav>
+<hr id="navBar" />
+
+<script>
+  function toggleHeader() {
+    headerNav = $("#headerNav");
+    // add a sliding class when opening the hamburger menu, so that we can
+    // check if we are currently sliding before performing a slide again
+    if (headerNav.is(":hidden")) {
+      headerNav.addClass("sliding");
+      headerNav.slideDown({
+        complete: () => {
+          headerNav.removeClass("sliding");
+        },
+      });
+      $("#navToggleBtn").toggleClass("toggle-open");
+      $("#hamburgerIcon").addClass("open");
+      $("#navBar").slideDown();
+      $("#mobileTitle").slideUp();
+    } else if (!headerNav.hasClass("sliding")) {
+      headerNav.addClass("sliding");
+      headerNav.slideUp({
+        complete: () => {
+          headerNav.removeClass("sliding");
+        },
+      });
+      $("#navToggleBtn").toggleClass("toggle-open");
+      $("#hamburgerIcon").removeClass("open");
+      $("#navBar").slideUp();
+      $("#mobileTitle").slideDown();
+    }
+  }
+  window.onload = () => {};
+</script>
+
+    <div class="container center-col">
+  <div class="item-list research">
+    <div class="item">
+      <div class="item-header">
+        <a href="https://dl.acm.org/doi/10.1145/3395351.3399356" target="_blank"
+          >Truncate after Preamble: PHY-based Starvation Attacks on IoT Networks</a
+        >
+      </div>
+      <div class="li-title">
+        Stefan Gvozdenovic, Johannes K. Becker, John Mikulskis, and David Starobinski
+      </div>
+      <div class="date">2020</div>
+    </div>
+    <div class="item">
+      <div class="item-header">
+        <a href="https://dl.acm.org/doi/abs/10.1145/3319535.3363248" target="_blank"
+          >Poster: Snout – An Extensible IoT Pen-Testing Tool</a
+        >
+      </div>
+      <div class="li-title">
+        John Mikulskis, Johannes K Becker, Stefan Gvozdenovic, and David Starobinski
+      </div>
+      <div class="date">2019</div>
+    </div>
+  </div>
+</div>
+
+  </body>
+</html>

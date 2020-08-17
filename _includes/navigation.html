@@ -1,0 +1,68 @@
+<div class="mobile-nav" onclick="toggleHeader()">
+  <span id="mobileTitle">Title</span>
+  <a href="javascript:void(0);" id="navToggleBtn" class="icon-link" onclick="toggleHeader()">
+    <i id="hamburgerIcon" class="fa fa-bars fa-2x"></i>
+  </a>
+</div>
+
+<div style="clear: both;"></div>
+<nav class="header-nav" id="headerNav">
+  <ul>
+    {% for item in site.data.navigation %}
+    <li>
+      {% if page.url == item.link %}
+      <a href="{{ item.link }}" class="current">
+        {{ item.name }}
+      </a>
+      <script>
+        $("#mobileTitle").text("{{ item.name }}");
+      </script>
+      {% elsif page.title == item.name %}
+      <a href="{{ item.link }}" class="current">
+        {{ item.name }}
+      </a>
+      <script>
+        $("#mobileTitle").text("{{ item.name }}");
+      </script>
+      {% else %}
+      <a href="{{ item.link }}">
+        {{ item.name }}
+      </a>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</nav>
+<hr id="navBar" />
+
+<script>
+  function toggleHeader() {
+    headerNav = $("#headerNav");
+    // add a sliding class when opening the hamburger menu, so that we can
+    // check if we are currently sliding before performing a slide again
+    if (headerNav.is(":hidden")) {
+      headerNav.addClass("sliding");
+      headerNav.slideDown({
+        complete: () => {
+          headerNav.removeClass("sliding");
+        },
+      });
+      $("#navToggleBtn").toggleClass("toggle-open");
+      $("#hamburgerIcon").addClass("open");
+      $("#navBar").slideDown();
+      $("#mobileTitle").slideUp();
+    } else if (!headerNav.hasClass("sliding")) {
+      headerNav.addClass("sliding");
+      headerNav.slideUp({
+        complete: () => {
+          headerNav.removeClass("sliding");
+        },
+      });
+      $("#navToggleBtn").toggleClass("toggle-open");
+      $("#hamburgerIcon").removeClass("open");
+      $("#navBar").slideUp();
+      $("#mobileTitle").slideDown();
+    }
+  }
+  window.onload = () => {};
+</script>

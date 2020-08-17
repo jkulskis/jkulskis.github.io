@@ -1,0 +1,55 @@
+.item-list {
+  margin: 2px;
+  max-width: $width-limit;
+}
+// first item
+.item .item-header {
+  list-style: none;
+  font-size: 22px;
+  color: black;
+}
+
+.item a {
+  color: black;
+  text-decoration: none;
+}
+
+.item a:hover {
+  color: $selected-color;
+}
+
+// sub-list items
+.item > ul {
+  padding-left: 25px;
+  margin: 0;
+}
+
+.item > ul > li {
+  list-style: none;
+  padding-left: 4px;
+  display: flex;
+  align-items: baseline;
+}
+
+li p{
+  margin: 0;
+}
+
+// Bullet point for sub-items
+.item > ul > li::before {
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900; 
+  content: "\f0da";
+  color: $selected-color;
+}
+
+.li-title {
+  color: $selected-color-dark;
+}
+
+.date::before {
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900; 
+  content: "\f133";
+  padding: 0 5px 0 2px;
+}

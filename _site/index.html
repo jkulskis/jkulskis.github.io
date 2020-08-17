@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home | John Mikulskis</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@469&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/9cc0d086d3.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  </head>
+  <body>
+    <div class="mobile-nav" onclick="toggleHeader()">
+  <span id="mobileTitle">Title</span>
+  <a href="javascript:void(0);" id="navToggleBtn" class="icon-link" onclick="toggleHeader()">
+    <i id="hamburgerIcon" class="fa fa-bars fa-2x"></i>
+  </a>
+</div>
+
+<div style="clear: both;"></div>
+<nav class="header-nav" id="headerNav">
+  <ul>
+    
+    <li>
+      
+      <a href="/" class="current">
+        Home
+      </a>
+      <script>
+        $("#mobileTitle").text("Home");
+      </script>
+      
+    </li>
+    
+    <li>
+      
+      <a href="/experience">
+        Experience
+      </a>
+      
+    </li>
+    
+    <li>
+      
+      <a href="/research">
+        Research
+      </a>
+      
+    </li>
+    
+    <li>
+      
+      <a href="/projects">
+        Projects
+      </a>
+      
+    </li>
+    
+  </ul>
+</nav>
+<hr id="navBar" />
+
+<script>
+  function toggleHeader() {
+    headerNav = $("#headerNav");
+    // add a sliding class when opening the hamburger menu, so that we can
+    // check if we are currently sliding before performing a slide again
+    if (headerNav.is(":hidden")) {
+      headerNav.addClass("sliding");
+      headerNav.slideDown({
+        complete: () => {
+          headerNav.removeClass("sliding");
+        },
+      });
+      $("#navToggleBtn").toggleClass("toggle-open");
+      $("#hamburgerIcon").addClass("open");
+      $("#navBar").slideDown();
+      $("#mobileTitle").slideUp();
+    } else if (!headerNav.hasClass("sliding")) {
+      headerNav.addClass("sliding");
+      headerNav.slideUp({
+        complete: () => {
+          headerNav.removeClass("sliding");
+        },
+      });
+      $("#navToggleBtn").toggleClass("toggle-open");
+      $("#hamburgerIcon").removeClass("open");
+      $("#navBar").slideUp();
+      $("#mobileTitle").slideDown();
+    }
+  }
+  window.onload = () => {};
+</script>
+
+    <div class="container" id="about">
+  <h1>John Mikulskis</h1>
+  <p>Hi, I study computer engineering and computer science at Boston University</p>
+  <p>You can find me @ any of the links below</p>
+</div>
+<div class="container" id="socials">
+  <a href="https://github.com/jkulskis" target="_blank"><i class="fab fa-github-square fa-3x"></i></a>
+  <a href="https://www.linkedin.com/in/jkulskis/" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
+  <a href="https://twitter.com/jkulskis" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
+  <a href="https://www.instagram.com/jkulskis/" target="_blank"><i class="fab fa-instagram-square fa-3x"></i></a>
+</div>
+  </body>
+</html>

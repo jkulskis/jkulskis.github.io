@@ -1,0 +1,36 @@
+@import "variables";
+
+// Home Page //
+
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#about h1 {
+  margin-bottom: 10px;
+}
+
+#about p {
+  padding: 0;
+  margin: 10px 0 5px 0;
+  font-size: 18px;
+}
+
+#socials {
+  display: flex;
+  justify-content: center;
+}
+
+#socials i {
+  color: $primary-color;
+  padding: 10px;
+}
+
+#socials i:hover {
+  color: $selected-color;
+}
+
+// End Home Page //

@@ -1,0 +1,16 @@
+---
+layout: base
+---
+<script>
+  $("#mobileTitle").hide();
+</script>
+<div class="container center-col">
+  <div class="project-post">
+    <div class="project-header">
+      <span class="project-title">{{ page.title }}</span>
+      <div class="date">{{ page.date | date_to_string }}</div>
+    </div>
+    <hr id="projectHeaderBar" />
+    {{ content }}
+  </div>
+</div>
