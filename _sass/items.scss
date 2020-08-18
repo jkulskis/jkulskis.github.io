@@ -14,10 +14,6 @@
   text-decoration: none;
 }
 
-.item a:hover {
-  color: $selected-color;
-}
-
 // sub-list items
 .item > ul {
   padding-left: 25px;
@@ -52,4 +48,8 @@ li p{
   font-weight: 900; 
   content: "\f133";
   padding: 0 5px 0 2px;
+}
+
+.item ul li:nth-child(2n) {
+  color: $primary-color-2;
 }

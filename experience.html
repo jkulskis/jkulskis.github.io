@@ -6,7 +6,7 @@ title: Experience
 <div class="container center-col">
   <div class="container exp">
     <section class="exp" id="education">
-      <h1 id="educationHeader" onclick="toggleList($('#educationList'))">
+      <h1 class="item-list-header clickable" id="educationHeader" onclick="toggleList($('#educationList'), $('#educationEmptySpan'))">
         Education
       </h1>
       <div class="item-list exp-list" id="educationList">
@@ -22,9 +22,10 @@ title: Experience
           <div class="date">September 2018 - May 2022</div>
         </div>
       </div>
+      <span class="empty" style="display: none;" id="educationEmptySpan">&nbsp;</span>
     </section>
     <section class="exp" id="workExp">
-      <h1 id="workHeader" onclick="toggleList($('#workList'))">
+      <h1 class="item-list-header clickable" id="workHeader" onclick="toggleList($('#workList'), $('#workEmptySpan'))">
         Work Experience
       </h1>
       <div class="item-list exp-list" id="workList">
@@ -134,26 +135,22 @@ title: Experience
           </ul>
         </div>
       </div>
+      <span class="empty" style="display: none;" id="workEmptySpan">&nbsp;</span>
     </section>
   </div>
 </div>
 
 <script>
-  function toggleList(list) {
-    // pushing temporarily, will fix this method on my desktop PC
-    return; 
-    if (list.css("visibility") !== "hidden") {
-      list.slideUp({
-        complete: () => {
-          list.show();
-          list.css("visibility", "hidden");
-        },
-      });
+  function toggleList(list, emptySpan) {
+    if (list.is(':visible')) {
+      emptySpan.show();
+      emptySpan.width(list.width());
+      emptySpan.css("display", "inline-block");
+      list.slideUp();
     }
     else {
-      list.css("visibility", "");
-      list.hide();
       list.slideDown();
+      emptySpan.hide();
     }
   }
 </script>

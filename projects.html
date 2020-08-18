@@ -8,6 +8,7 @@ title: Projects
     {% for project in site.categories.projects %}
     <li>
       <h1><a href="{{ project.url }}">{{ project.title }}</a></h1>
+      <div class="date">{{ project.date | date_to_string }}</div>
     </li>
     {{ project.excerpt }} {% endfor %}
   </ul>

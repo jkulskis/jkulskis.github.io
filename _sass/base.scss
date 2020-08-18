@@ -159,3 +159,11 @@ li::before {
   content: "\f0da";
   color: $selected-color;
 }
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  color: $selected-color;
+}
