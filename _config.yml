@@ -2,3 +2,5 @@ sass:
   style: compressed
   sass_dir: _sass
 permalink: /:title/
+plugins: 
+  - jekyll-sitemap
