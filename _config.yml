@@ -1,3 +1,4 @@
+url: "https://jkulskis.github.io/" # the base hostname & protocol for your site
 sass:
   style: compressed
   sass_dir: _sass
