@@ -6,15 +6,17 @@ title: Experience
 <div class="container center-col">
   <div class="container exp">
     <section class="exp" id="education">
-      <h1 class="item-list-header clickable" id="educationHeader" onclick="toggleList($('#educationList'), $('#educationEmptySpan'))">
+      <h1
+        class="item-list-header clickable"
+        id="educationHeader"
+        onclick="toggleList($('#educationList'), $('#educationEmptySpan'))"
+      >
         Education
       </h1>
       <div class="item-list exp-list" id="educationList">
         <div class="item">
           <div class="item-header">
-            <a href="http://www.bu.edu/eng/" target="_blank"
-              >Boston University</a
-            >
+            <a href="http://www.bu.edu/eng/" target="_blank">Boston University</a>
           </div>
           <div class="li-title">
             BS in Computer Engineering, Minor in Computer Science
@@ -37,62 +39,52 @@ title: Experience
           <div class="date">May 2020 - August 2020</div>
           <ul>
             <li>
-              Developed infrastructure software in python to locate and quantify
-              the usage of different VMs and hardware
+              Developed infrastructure software in python to locate and quantify the usage of all VMs and hardware
+              actively in use
             </li>
             <li>
-              Improved the display of test results and comparisons across builds
-              using django and javascript
+              Improved the display of different test results and comparisons across builds using django and javascript
             </li>
             <li>
-              Helped to integrate software changes for a hardware MUX system
-              with Zigbee JUnit tests, which allowed for multiple testing
-              servers to share the same hardware
+              Introduced software changes for a hardware MUX system with Zigbee JUnit tests, which enabled multiple
+              servers and stacks to share the same hardware
             </li>
             <li>
-              Created and managed different jenkins jobs with both the jenkins
-              API and UI
+              Created and managed muliple jenkins jobs with both the jenkins API and GUI
             </li>
           </ul>
         </div>
 
         <div class="item">
           <div class="item-header">
-            <a href="http://sites.bu.edu/nislab/" target="_blank"
-              >Boston University NISLAB</a
-            >
+            <a href="http://sites.bu.edu/nislab/" target="_blank">Boston University NISLAB</a>
           </div>
           <div class="li-title">Software Engineering Research Assistant</div>
           <div class="date">March 2019 - January 2020</div>
           <ul>
             <li>
-              Investigated Cybersecurity advancements for IoT devices with
-              software defined radios (SDRs)
+              Investigated Cybersecurity advancements for various IoT devices with software defined radios (SDRs)
             </li>
             <li>
-              Collaborated with PhD students to develop "Snout", an OSS python
-              CLI controlled wrapper tool for other OSS SDR tool sets
+              Collaborated with PhD students to develop "Snout", an OSS python CLI controlled wrapper tool for many
+              other OSS SDR tool sets
             </li>
             <li>
               <p>
-                This work was accepted into CCS 2019's poster exhibit.&nbsp;
-                <a href="https://snout.tools/" target="_blank"
-                  >See https://snout.tools/ for more details</a
-                >
+                The work done on "Snout" was accepted into CCS 2019's poster exhibit,
+                <a href="https://snout.tools/" target="_blank">see https://snout.tools/ for more details</a>
               </p>
             </li>
             <li>
               <p>
-                Helped assist PhD students on a paper by writing software to perform and analyze cyber attacks
+                Helped assist PhD students by writing software and academic papers on wireless cyber attacks
               </p>
             </li>
           </ul>
         </div>
         <div class="item">
           <div class="item-header">
-            <a
-              href="https://www.bu.edu/academics/eng/courses/eng-ec-327/"
-              target="_blank"
+            <a href="https://www.bu.edu/academics/eng/courses/eng-ec-327/" target="_blank"
               >Boston University College of Engineering</a
             >
           </div>
@@ -101,10 +93,11 @@ title: Experience
           </div>
           <div class="date">Sep 2019 - December 2019</div>
           <ul>
-            <li>Ran labs, held office hours, graded tests and homework</li>
+            <li>Ran weekly labs and office hours, as well as graded tests and homework</li>
             <li>
-              Implemented GitHub classroom and git tutorials into lesson plans
-              for turning in assignments
+              Launched GitHub classroom and git tutorials into lesson plans to help students become accustomed with
+              modern version control systems, while also improving the tracking and efficiency of turning in homework
+              assignments
             </li>
           </ul>
         </div>
@@ -116,26 +109,22 @@ title: Experience
           <div class="li-title">Applications Engineering Intern</div>
           <div class="date">May 2018 - August 2018</div>
           <ul>
-            <li>Worked on software development for Systems on Chip (SoCs)</li>
+            <li>Worked on software development for multiple Silicon Labs Systems on Chip (SoCs)</li>
             <li>
-              Improved a library in the Zigbee wireless stacks to help prototype
-              devices to customers
+              Revitalized a library in the Zigbee wireless stacks to help prototype devices to customers
             </li>
             <li>
-              Developed an OTA simulation tool to analyze and help improve
-              packet transmission processes
+              Developed an OTA simulation tool to analyze and help improve packet transmission processes
             </li>
           </ul>
           <div class="li-title">Applications Engineering Intern</div>
           <div class="date">July 2019 - August 2019</div>
           <ul>
             <li>
-              Analyzed the efficiency of various sleep modes and processes for
-              EM3xx and Mighty Gecko SoCs
+              Interpreted the efficiency of various sleep modes and processes for EM3xx and Mighty Gecko SoCs
             </li>
             <li>
-              Provided documentation for Silicon Labs' Zigbee OTA applications
-              and devices
+              Designed documentation for Silicon Labs' Zigbee OTA applications and devices
             </li>
           </ul>
         </div>
@@ -147,13 +136,12 @@ title: Experience
 
 <script>
   function toggleList(list, emptySpan) {
-    if (list.is(':visible')) {
+    if (list.is(":visible")) {
       emptySpan.show();
       emptySpan.width(list.width());
       emptySpan.css("display", "inline-block");
       list.slideUp();
-    }
-    else {
+    } else {
       list.slideDown();
       emptySpan.hide();
     }
