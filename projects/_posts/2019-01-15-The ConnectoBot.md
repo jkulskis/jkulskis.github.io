@@ -2,7 +2,7 @@
 layout: project
 title: The ConnectoBot
 ---
-This robot is made structurally out of wood and programmed with an Arduino board. It communicates with a python program on the computer so that you can play connect 4 against it.
+An arduino woodworking robot project made to beat you in connect 4.
 
 
 
